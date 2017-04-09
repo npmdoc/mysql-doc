@@ -9823,7 +9823,7 @@ local.assetsDict['/assets.index.template.html'].replace((/\n/g), '\\n\\\n') +
         local.assetsDict[\'/assets.jslint.rollup.js\'] =\n\
             local.assetsDict[\'/assets.jslint.rollup.js\'] ||\n\
             local.fs.readFileSync(\n\
-                // npmdoc-hack\n\
+                // buildCustomFrom-hack\n\
                 local.jslint.__dirname +\n\
                     \'/lib.jslint.js\',\n\
                 \'utf8\'\n\
@@ -11996,7 +11996,7 @@ return Utf8ArrayToStr(bff);
 
         local.buildNpmdoc = function (options, onError) {
         /*
-         * this function will build the npmdoc
+         * this function will build the customFrom
          */
             var done, onError2, onParallel, packageJson;
             // ensure exit after 5 minutes
@@ -12016,8 +12016,6 @@ return Utf8ArrayToStr(bff);
             onParallel.counter += 1;
             // build package.json
             packageJson = JSON.parse(local.fs.readFileSync('package.json', 'utf8'));
-            local.objectSetDefault(packageJson, local.objectLiteralize({
-            }), 2);
             local.objectSetOverride(packageJson, local.objectLiteralize({
                 keywords: ['documentation', local.env.npm_package_buildCustomFrom]
             }), 2);
@@ -14740,7 +14738,7 @@ instruction\n\
                 process.exit = local.nop;
                 if (local.env.npm_package_buildCustomFrom &&
                         local.env.GITHUB_ORG === 'npmtest') {
-                    local.exportsNpmdoc =
+                    local.exportsCustomFrom =
                         require(process.cwd() + '/' + local.env.npm_package_buildCustomFrom);
                 }
                 break;
