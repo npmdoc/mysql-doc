@@ -639,7 +639,7 @@ local.templateApidocMd = '\
                 moduleMain = {};
                 moduleMain = options.moduleDict[options.env.npm_package_name] =
                     options.moduleDict[options.env.npm_package_name] ||
-                    require(options.dir + (process.env.npm_package_buildNpmdocMain || ''));
+                    require(options.dir);
             } catch (ignore) {
             }
             options.moduleDict[options.env.npm_package_name] = moduleMain;
@@ -687,7 +687,7 @@ local.templateApidocMd = '\
             });
             module = options.moduleExtraDict[options.env.npm_package_name] =
                 options.moduleExtraDict[options.env.npm_package_name] || {};
-            options.libFileList.forEach(function (file) {
+            options.libFileList.some(function (file) {
                 try {
                     tmp = {};
                     tmp.name = local.path.basename(file)
@@ -728,7 +728,9 @@ local.templateApidocMd = '\
                     options.exampleList.push(readExample(file));
                 } catch (ignore) {
                 }
+                return options.exampleList.length <= 20;
             });
+            options.exampleList = options.exampleList.slice(0, 20);
             local.apidocModuleDictAdd(options, options.moduleExtraDict);
             // normalize moduleMain
             moduleMain = options.moduleDict[options.env.npm_package_name] =
@@ -9787,9 +9789,9 @@ local.assetsDict['/assets.index.template.html'].replace((/\n/g), '\\n\\\n') +
                 local.assetsDict[\'/assets.index.template.html\'],\n\
                 {\n\
                     env: local.objectSetDefault(local.env, {\n\
-                        npm_package_description: \'example module\',\n\
-                        npm_package_name: \'example\',\n\
-                        npm_package_nameAlias: \'example\',\n\
+                        npm_package_description: \'the greatest app in the world!\',\n\
+                        npm_package_name: \'my-app\',\n\
+                        npm_package_nameAlias: \'my_app\',\n\
                         npm_package_version: \'0.0.1\'\n\
                     })\n\
                 }\n\
@@ -9801,11 +9803,11 @@ local.assetsDict['/assets.index.template.html'].replace((/\n/g), '\\n\\\n') +
                     String(match0);\n\
                     switch (match1) {\n\
                     case \'npm_package_description\':\n\
-                        return \'example module\';\n\
+                        return \'the greatest app in the world!\';\n\
                     case \'npm_package_name\':\n\
-                        return \'example\';\n\
+                        return \'my-app\';\n\
                     case \'npm_package_nameAlias\':\n\
-                        return \'example\';\n\
+                        return \'my_app\';\n\
                     case \'npm_package_version\':\n\
                         return \'0.0.1\';\n\
                     }\n\
@@ -9914,7 +9916,7 @@ local.assetsDict['/assets.lib.template.js'] = '\
 
 local.assetsDict['/assets.readme.template.md'] = '\
 # jslint-lite\n\
-example module\n\
+the greatest app in the world!\n\
 \n\
 [![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-jslint-lite.svg)](https://travis-ci.org/kaizhu256/node-jslint-lite) [![istanbul-coverage](https://kaizhu256.github.io/node-jslint-lite/build/coverage.badge.svg)](https://kaizhu256.github.io/node-jslint-lite/build/coverage.html/index.html)\n\
 \n\
@@ -9934,7 +9936,7 @@ example module\n\
 # live demo\n\
 - [https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/app/index.html](https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/app/index.html)\n\
 \n\
-[![github.com test-server](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.deployGithub.browser._2Fnode-jslint-lite_2Fbuild_2Fapp_2Findex.html.png)](https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/app/index.html)\n\
+[![github.com test-server](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.deployGithub.browser.%252Fnode-jslint-lite%252Fbuild%252Fapp%252Findex.html.png)](https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/app/index.html)\n\
 \n\
 \n\
 \n\
@@ -9942,12 +9944,12 @@ example module\n\
 #### apidoc\n\
 - [https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/apidoc.html](https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/apidoc.html)\n\
 \n\
-[![apidoc](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.buildApidoc.browser._2Fhome_2Ftravis_2Fbuild_2Fkaizhu256_2Fnode-jslint-lite_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/apidoc.html)\n\
+[![apidoc](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fkaizhu256%252Fnode-jslint-lite%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/apidoc.html)\n\
 \n\
 #### todo\n\
 - none\n\
 \n\
-#### change since xxxxxxxx\n\
+#### changes for v0.0.1\n\
 - none\n\
 \n\
 #### this package requires\n\
@@ -9982,14 +9984,14 @@ example module\n\
 \n\
 \n\
 # quickstart web example\n\
-![screenCapture](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.testExampleJs.browser..png)\n\
+![screenCapture](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.testExampleJs.browser.%252F.png)\n\
 \n\
 #### to run this example, follow the instruction in the script below\n\
 - [example.js](https://kaizhu256.github.io/node-jslint-lite/build..beta..travis-ci.org/example.js)\n\
 ```javascript\n' + local.assetsDict['/assets.example.template.js'] + '```\n\
 \n\
 #### output from browser\n\
-![screenCapture](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.testExampleJs.browser..png)\n\
+![screenCapture](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.testExampleJs.browser.%252F.png)\n\
 \n\
 #### output from shell\n\
 ![screenCapture](https://kaizhu256.github.io/node-jslint-lite/build/screenCapture.testExampleJs.svg)\n\
@@ -10000,7 +10002,7 @@ example module\n\
 ```json\n\
 {\n\
     "author": "kai zhu <kaizhu256@gmail.com>",\n\
-    "description": "example module",\n\
+    "description": "the greatest app in the world!",\n\
     "devDependencies": {\n\
         "electron-lite": "kaizhu256/node-electron-lite#alpha",\n\
         "utility2": "kaizhu256/node-utility2#alpha"\n\
@@ -10049,7 +10051,7 @@ example module\n\
 \n\
 shBuildCiPost() {(set -e\n\
     shDeployGithub\n\
-    shDeployHeroku\n\
+    # shDeployHeroku\n\
     shReadmeBuildLinkVerify\n\
 )}\n\
 \n\
@@ -10182,7 +10184,7 @@ local.assetsDict['/assets.test.template.js'] = '\
          * this function will test buildApidoc\'s default handling-behavior-behavior\n\
          */\n\
             options = { modulePathList: module.paths };\n\
-            if (local.env.npm_package_buildNpmdoc) {\n\
+            if (local.env.npm_package_buildCustomFrom) {\n\
                 local.buildNpmdoc(options, onError);\n\
                 return;\n\
             }\n\
@@ -10221,7 +10223,7 @@ local.assetsDict['/assets.test.template.js'] = '\
         /*\n\
          * this function will test buildReadme\'s default handling-behavior-behavior\n\
          */\n\
-            if (local.env.npm_package_buildNpmdoc) {\n\
+            if (local.env.npm_package_buildCustomFrom) {\n\
                 onError();\n\
                 return;\n\
             }\n\
@@ -11474,9 +11476,7 @@ local.assetsDict['/favicon.ico'] = '';
                         fileCoverage: local.env.npm_config_dir_tmp +
                             '/coverage.' + options.testName + '.json',
                         fileScreenCapture: (local.env.npm_config_dir_build +
-                            '/screenCapture.' + options.testName + '.png')
-                            .replace((/%/g), '_')
-                            .replace((/_2F\.png$/), '.png'),
+                            '/screenCapture.' + options.testName + '.png'),
                         fileTestReport: local.env.npm_config_dir_tmp +
                             '/test-report.' + options.testName + '.json',
                         modeBrowserTest: 'test',
@@ -12017,17 +12017,9 @@ return Utf8ArrayToStr(bff);
             // build package.json
             packageJson = JSON.parse(local.fs.readFileSync('package.json', 'utf8'));
             local.objectSetDefault(packageJson, local.objectLiteralize({
-                devDependencies: {
-                    '$[]': [local.env.npm_package_buildNpmdoc, '*']
-                },
-                repository: {
-                    type: 'git',
-                    url: 'https://github.com/npmdoc/node-npmdoc-' +
-                        local.env.npm_package_buildNpmdoc + '.git'
-                }
             }), 2);
             local.objectSetOverride(packageJson, local.objectLiteralize({
-                keywords: ['documentation', local.env.npm_package_buildNpmdoc]
+                keywords: ['documentation', local.env.npm_package_buildCustomFrom]
             }), 2);
             onParallel.counter += 1;
             local.buildReadme({
@@ -12035,16 +12027,17 @@ return Utf8ArrayToStr(bff);
                     JSON.stringify(packageJson) + '\n```\n'
             }, onParallel);
             packageJson = JSON.parse(local.fs.readFileSync('package.json', 'utf8'));
-            // build apidoc.html
-            onParallel.counter += 1;
-            local.buildApidoc({
-                dir: local.env.npm_package_buildNpmdoc,
-                modulePathList: options.modulePathList
-            }, onParallel);
-            // build README.md
-            options = { modulePathList: options.modulePathList };
-            options.readme = local.apidocCreate({
-                dir: local.env.npm_package_buildNpmdoc,
+            if (local.env.GITHUB_ORG !== 'npmtest') {
+                // build apidoc.html
+                onParallel.counter += 1;
+                local.buildApidoc({
+                    dir: local.env.npm_package_buildCustomFrom,
+                    modulePathList: options.modulePathList
+                }, onParallel);
+                // build README.md
+                options = { modulePathList: options.modulePathList };
+                options.readme = local.apidocCreate({
+                    dir: local.env.npm_package_buildCustomFrom,
 /* jslint-ignore-begin */
 header: '\
 # api documentation for \
@@ -12062,7 +12055,7 @@ header: '\
 [![NPM](https://nodei.co/npm/{{env.npm_package_name}}.png?downloads=true)](https://www.npmjs.com/package/{{env.npm_package_name}}) \
 \n\
 \n\
-[![apidoc](https://npmdoc.github.io/node-npmdoc-{{env.npm_package_name}}/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-{{env.npm_package_name}}_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-{{env.npm_package_name}}/build/apidoc.html) \
+[![apidoc](https://npmdoc.github.io/node-npmdoc-{{env.npm_package_name}}/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-{{env.npm_package_name}}%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-{{env.npm_package_name}}/build/apidoc.html) \
 \n\
 \n\
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-{{env.npm_package_name}}/build/screenCapture.npmPackageListing.svg) \
@@ -12085,10 +12078,11 @@ header: '\
 \n\
 ',
 /* jslint-ignore-end */
-                modulePathList: options.modulePathList,
-                template: local.apidoc.templateApidocMd
-            });
-            local.fs.writeFileSync('README.md', options.readme);
+                    modulePathList: options.modulePathList,
+                    template: local.apidoc.templateApidocMd
+                });
+                local.fs.writeFileSync('README.md', options.readme);
+            }
             // re-build package.json
             packageJson.description = (/\w.*/).exec(options.readme)[0]
                 .replace((/ {2,}/g), ' ')
@@ -13830,7 +13824,7 @@ vendor\\)\\(\\b\\|[_s]\\)\
                 {}
             );
             // coverage-hack
-            local.nop(local.env.npm_package_readmeParse && (function () {
+            local.nop(!local.env.npm_package_buildCustomFrom && (function () {
                 local.fs.readFileSync('README.md', 'utf8').replace(
                     (/```\w*?(\n[\W\s]*?example\.js[\n\"][\S\s]+?)\n```/),
                     function (match0, match1, ii, text) {
@@ -14397,8 +14391,8 @@ instruction\n\
                 options.githubRepo.join('/')
             );
             template = template.replace(
-                (/kaizhu256_2Fnode-jslint-lite/g),
-                options.githubRepo.join('_2F')
+                (/kaizhu256%252Fnode-jslint-lite/g),
+                options.githubRepo.join('%252F')
             );
             template = template.replace(
                 (/node-jslint-lite/g),
@@ -14744,6 +14738,11 @@ instruction\n\
                 // mock proces.exit
                 exit = process.exit;
                 process.exit = local.nop;
+                if (local.env.npm_package_buildCustomFrom &&
+                        local.env.GITHUB_ORG === 'npmtest') {
+                    local.exportsNpmdoc =
+                        require(process.cwd() + '/' + local.env.npm_package_buildCustomFrom);
+                }
                 break;
             }
             // init modeTestCase
@@ -15125,9 +15124,9 @@ instruction\n\
             npm_package_nameAlias: (local.env.npm_package_name || '').replace((/\W/g), '_')
         });
         local.objectSetDefault(local.env, {
-            npm_package_description: 'example module',
-            npm_package_name: 'example',
-            npm_package_nameAlias: 'example',
+            npm_package_description: 'the greatest app in the world!',
+            npm_package_name: 'my-app',
+            npm_package_nameAlias: 'my_app',
             npm_package_version: '0.0.1'
         });
         local.errorDefault = new Error('default error');
@@ -15137,23 +15136,6 @@ instruction\n\
         local.istanbulInstrumentInPackage = local.istanbul.instrumentInPackage || local.echo;
         local.istanbulInstrumentSync = local.istanbul.instrumentSync || local.echo;
         local.jslintAndPrint = local.jslint.jslintAndPrint || local.echo;
-        local.packageJsonNpmdocDefault = {
-            "buildNpmdoc": "mysql",
-            "devDependencies": {
-                "electron-lite": "kaizhu256/node-electron-lite#alpha",
-                "utility2": "kaizhu256/node-utility2#alpha"
-            },
-            "homepage": "https://github.com/npmdoc/node-npmdoc-mysql",
-            "name": "npmdoc-mysql",
-            "nameOriginal": "npmdoc-mysql",
-            "repository": {
-                "type": "git",
-                "url": "https://github.com/npmdoc/node-npmdoc-mysql.git"
-            },
-            "scripts": {
-                "build-ci": "utility2 shReadmeTest build_ci.sh"
-            }
-        };
         local.regexpEmailValidate = new RegExp(
             '^[a-zA-Z0-9.!#$%&\'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}' +
                 '[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$'
