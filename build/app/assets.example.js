@@ -1,8 +1,325 @@
-var __cov_6666aa8145e0b = (Function('return this'))();
-if (!__cov_6666aa8145e0b.__coverage__) { __cov_6666aa8145e0b.__coverage__ = {}; }
-__cov_6666aa8145e0b = __cov_6666aa8145e0b.__coverage__;
-if (!(__cov_6666aa8145e0b['/home/travis/build/npmdoc/node-npmdoc-mysql/example.js'])) {
-   __cov_6666aa8145e0b['/home/travis/build/npmdoc/node-npmdoc-mysql/example.js'] = {"path":"/home/travis/build/npmdoc/node-npmdoc-mysql/example.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0,"50":0,"51":0,"52":0,"53":0,"54":0,"55":0,"56":0,"57":0,"58":0,"59":0,"60":0,"61":0,"62":0,"63":0,"64":0,"65":0,"66":0,"67":0,"68":0,"69":0,"70":0,"71":0,"72":0,"73":0,"74":0,"75":0,"76":0,"77":0,"78":0,"79":0,"80":0,"81":0,"82":0,"83":0},"b":{"1":[0,0,0,0],"2":[0,0,0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0,0,0,0,0],"9":[0,0,0],"10":[0,0],"11":[0,0,0],"12":[0,0],"13":[0,0],"14":[0,0,0,0,0,0,0],"15":[0,0],"16":[0,0],"17":[0,0],"18":[0,0],"19":[0,0,0,0],"20":[0,0],"21":[0,0],"22":[0,0],"23":[0,0],"24":[0,0],"25":[0,0],"26":[0,0],"27":[0,0],"28":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0},"fnMap":{"1":{"name":"(anonymous_1)","line":100,"loc":{"start":{"line":100,"column":1},"end":{"line":100,"column":13}}},"2":{"name":"(anonymous_2)","line":107,"loc":{"start":{"line":107,"column":5},"end":{"line":107,"column":17}}},"3":{"name":"(anonymous_3)","line":111,"loc":{"start":{"line":111,"column":24},"end":{"line":111,"column":36}}},"4":{"name":"(anonymous_4)","line":143,"loc":{"start":{"line":143,"column":31},"end":{"line":143,"column":48}},"skip":true},"5":{"name":"(anonymous_5)","line":152,"loc":{"start":{"line":152,"column":26},"end":{"line":152,"column":45}},"skip":true},"6":{"name":"(anonymous_6)","line":197,"loc":{"start":{"line":197,"column":33},"end":{"line":197,"column":48}},"skip":true},"7":{"name":"(anonymous_7)","line":199,"loc":{"start":{"line":199,"column":27},"end":{"line":199,"column":39}},"skip":true},"8":{"name":"(anonymous_8)","line":207,"loc":{"start":{"line":207,"column":59},"end":{"line":207,"column":74}},"skip":true},"9":{"name":"(anonymous_9)","line":217,"loc":{"start":{"line":217,"column":45},"end":{"line":217,"column":62}},"skip":true},"10":{"name":"(anonymous_10)","line":218,"loc":{"start":{"line":218,"column":73},"end":{"line":218,"column":92}},"skip":true},"11":{"name":"(anonymous_11)","line":346,"loc":{"start":{"line":346,"column":51},"end":{"line":346,"column":77}},"skip":true},"12":{"name":"(anonymous_12)","line":388,"loc":{"start":{"line":388,"column":32},"end":{"line":388,"column":61}},"skip":true}},"statementMap":{"1":{"start":{"line":100,"column":0},"end":{"line":399,"column":5}},"2":{"start":{"line":102,"column":4},"end":{"line":102,"column":14}},"3":{"start":{"line":107,"column":4},"end":{"line":134,"column":9}},"4":{"start":{"line":109,"column":8},"end":{"line":109,"column":19}},"5":{"start":{"line":111,"column":8},"end":{"line":123,"column":13}},"6":{"start":{"line":112,"column":12},"end":{"line":122,"column":13}},"7":{"start":{"line":113,"column":16},"end":{"line":116,"column":30}},"8":{"start":{"line":118,"column":16},"end":{"line":121,"column":27}},"9":{"start":{"line":125,"column":8},"end":{"line":127,"column":21}},"10":{"start":{"line":129,"column":8},"end":{"line":131,"column":45}},"11":{"start":{"line":133,"column":8},"end":{"line":133,"column":35}},"12":{"start":{"line":135,"column":4},"end":{"line":398,"column":5}},"13":{"start":{"line":143,"column":8},"end":{"line":195,"column":10},"skip":true},"14":{"start":{"line":144,"column":12},"end":{"line":162,"column":13},"skip":true},"15":{"start":{"line":150,"column":16},"end":{"line":161,"column":19},"skip":true},"16":{"start":{"line":153,"column":20},"end":{"line":160,"column":21},"skip":true},"17":{"start":{"line":156,"column":24},"end":{"line":156,"column":43},"skip":true},"18":{"start":{"line":157,"column":24},"end":{"line":157,"column":30},"skip":true},"19":{"start":{"line":159,"column":24},"end":{"line":159,"column":49},"skip":true},"20":{"start":{"line":163,"column":12},"end":{"line":181,"column":13},"skip":true},"21":{"start":{"line":166,"column":16},"end":{"line":176,"column":17},"skip":true},"22":{"start":{"line":167,"column":20},"end":{"line":167,"column":86},"skip":true},"23":{"start":{"line":168,"column":20},"end":{"line":169,"column":45},"skip":true},"24":{"start":{"line":170,"column":20},"end":{"line":170,"column":42},"skip":true},"25":{"start":{"line":171,"column":20},"end":{"line":171,"column":48},"skip":true},"26":{"start":{"line":174,"column":20},"end":{"line":174,"column":85},"skip":true},"27":{"start":{"line":175,"column":20},"end":{"line":175,"column":96},"skip":true},"28":{"start":{"line":177,"column":16},"end":{"line":177,"column":22},"skip":true},"29":{"start":{"line":180,"column":16},"end":{"line":180,"column":22},"skip":true},"30":{"start":{"line":182,"column":12},"end":{"line":194,"column":13},"skip":true},"31":{"start":{"line":188,"column":16},"end":{"line":193,"column":17},"skip":true},"32":{"start":{"line":190,"column":20},"end":{"line":190,"column":78},"skip":true},"33":{"start":{"line":192,"column":20},"end":{"line":192,"column":53},"skip":true},"34":{"start":{"line":197,"column":8},"end":{"line":215,"column":11},"skip":true},"35":{"start":{"line":198,"column":12},"end":{"line":198,"column":54},"skip":true},"36":{"start":{"line":199,"column":12},"end":{"line":214,"column":14},"skip":true},"37":{"start":{"line":200,"column":16},"end":{"line":200,"column":28},"skip":true},"38":{"start":{"line":201,"column":16},"end":{"line":201,"column":69},"skip":true},"39":{"start":{"line":202,"column":16},"end":{"line":202,"column":75},"skip":true},"40":{"start":{"line":203,"column":16},"end":{"line":205,"column":17},"skip":true},"41":{"start":{"line":204,"column":20},"end":{"line":204,"column":27},"skip":true},"42":{"start":{"line":207,"column":16},"end":{"line":211,"column":36},"skip":true},"43":{"start":{"line":208,"column":20},"end":{"line":210,"column":55},"skip":true},"44":{"start":{"line":213,"column":16},"end":{"line":213,"column":57},"skip":true},"45":{"start":{"line":217,"column":8},"end":{"line":221,"column":11},"skip":true},"46":{"start":{"line":218,"column":12},"end":{"line":220,"column":15},"skip":true},"47":{"start":{"line":219,"column":16},"end":{"line":219,"column":70},"skip":true},"48":{"start":{"line":223,"column":8},"end":{"line":223,"column":31},"skip":true},"49":{"start":{"line":224,"column":8},"end":{"line":224,"column":14},"skip":true},"50":{"start":{"line":232,"column":8},"end":{"line":232,"column":31},"skip":true},"51":{"start":{"line":234,"column":8},"end":{"line":234,"column":33},"skip":true},"52":{"start":{"line":235,"column":8},"end":{"line":235,"column":37},"skip":true},"53":{"start":{"line":236,"column":8},"end":{"line":236,"column":35},"skip":true},"54":{"start":{"line":238,"column":8},"end":{"line":238,"column":50},"skip":true},"55":{"start":{"line":240,"column":8},"end":{"line":330,"column":2},"skip":true},"56":{"start":{"line":332,"column":8},"end":{"line":360,"column":9},"skip":true},"57":{"start":{"line":333,"column":12},"end":{"line":343,"column":14},"skip":true},"58":{"start":{"line":345,"column":12},"end":{"line":359,"column":19},"skip":true},"59":{"start":{"line":348,"column":20},"end":{"line":348,"column":35},"skip":true},"60":{"start":{"line":349,"column":20},"end":{"line":358,"column":21},"skip":true},"61":{"start":{"line":351,"column":24},"end":{"line":351,"column":64},"skip":true},"62":{"start":{"line":353,"column":24},"end":{"line":353,"column":40},"skip":true},"63":{"start":{"line":355,"column":24},"end":{"line":355,"column":40},"skip":true},"64":{"start":{"line":357,"column":24},"end":{"line":357,"column":39},"skip":true},"65":{"start":{"line":362,"column":8},"end":{"line":364,"column":9},"skip":true},"66":{"start":{"line":363,"column":12},"end":{"line":363,"column":18},"skip":true},"67":{"start":{"line":365,"column":8},"end":{"line":367,"column":54},"skip":true},"68":{"start":{"line":368,"column":8},"end":{"line":375,"column":37},"skip":true},"69":{"start":{"line":376,"column":8},"end":{"line":376,"column":82},"skip":true},"70":{"start":{"line":379,"column":8},"end":{"line":381,"column":9},"skip":true},"71":{"start":{"line":380,"column":12},"end":{"line":380,"column":82},"skip":true},"72":{"start":{"line":383,"column":8},"end":{"line":385,"column":9},"skip":true},"73":{"start":{"line":384,"column":12},"end":{"line":384,"column":18},"skip":true},"74":{"start":{"line":386,"column":8},"end":{"line":386,"column":54},"skip":true},"75":{"start":{"line":387,"column":8},"end":{"line":387,"column":69},"skip":true},"76":{"start":{"line":388,"column":8},"end":{"line":396,"column":36},"skip":true},"77":{"start":{"line":389,"column":12},"end":{"line":389,"column":61},"skip":true},"78":{"start":{"line":390,"column":12},"end":{"line":393,"column":13},"skip":true},"79":{"start":{"line":391,"column":16},"end":{"line":391,"column":75},"skip":true},"80":{"start":{"line":392,"column":16},"end":{"line":392,"column":23},"skip":true},"81":{"start":{"line":394,"column":12},"end":{"line":394,"column":38},"skip":true},"82":{"start":{"line":395,"column":12},"end":{"line":395,"column":27},"skip":true},"83":{"start":{"line":397,"column":8},"end":{"line":397,"column":14},"skip":true}},"branchMap":{"1":{"line":113,"type":"binary-expr","locations":[{"start":{"line":113,"column":23},"end":{"line":113,"column":62}},{"start":{"line":114,"column":20},"end":{"line":114,"column":70}},{"start":{"line":115,"column":20},"end":{"line":115,"column":71}},{"start":{"line":116,"column":20},"end":{"line":116,"column":29}}]},"2":{"line":118,"type":"binary-expr","locations":[{"start":{"line":118,"column":23},"end":{"line":118,"column":37}},{"start":{"line":119,"column":20},"end":{"line":119,"column":61}},{"start":{"line":120,"column":20},"end":{"line":120,"column":70}},{"start":{"line":121,"column":20},"end":{"line":121,"column":26}}]},"3":{"line":125,"type":"cond-expr","locations":[{"start":{"line":126,"column":14},"end":{"line":126,"column":20}},{"start":{"line":127,"column":14},"end":{"line":127,"column":20}}]},"4":{"line":129,"type":"binary-expr","locations":[{"start":{"line":129,"column":16},"end":{"line":129,"column":44}},{"start":{"line":129,"column":49},"end":{"line":131,"column":43}}]},"5":{"line":129,"type":"cond-expr","locations":[{"start":{"line":130,"column":14},"end":{"line":130,"column":48}},{"start":{"line":131,"column":14},"end":{"line":131,"column":43}}]},"6":{"line":135,"type":"switch","locations":[{"start":{"line":142,"column":4},"end":{"line":224,"column":14},"skip":true},{"start":{"line":230,"column":4},"end":{"line":397,"column":14},"skip":true}]},"7":{"line":144,"type":"if","locations":[{"start":{"line":144,"column":12},"end":{"line":144,"column":12},"skip":true},{"start":{"line":144,"column":12},"end":{"line":144,"column":12},"skip":true}]},"8":{"line":144,"type":"binary-expr","locations":[{"start":{"line":144,"column":16},"end":{"line":144,"column":22},"skip":true},{"start":{"line":144,"column":27},"end":{"line":144,"column":32},"skip":true},{"start":{"line":145,"column":20},"end":{"line":145,"column":39},"skip":true},{"start":{"line":146,"column":20},"end":{"line":146,"column":49},"skip":true},{"start":{"line":147,"column":20},"end":{"line":147,"column":58},"skip":true},{"start":{"line":148,"column":20},"end":{"line":148,"column":69},"skip":true}]},"9":{"line":153,"type":"switch","locations":[{"start":{"line":154,"column":20},"end":{"line":154,"column":33},"skip":true},{"start":{"line":155,"column":20},"end":{"line":157,"column":30},"skip":true},{"start":{"line":158,"column":20},"end":{"line":159,"column":49},"skip":true}]},"10":{"line":163,"type":"switch","locations":[{"start":{"line":164,"column":12},"end":{"line":177,"column":22},"skip":true},{"start":{"line":179,"column":12},"end":{"line":180,"column":22},"skip":true}]},"11":{"line":163,"type":"binary-expr","locations":[{"start":{"line":163,"column":20},"end":{"line":163,"column":25},"skip":true},{"start":{"line":163,"column":29},"end":{"line":163,"column":48},"skip":true},{"start":{"line":163,"column":52},"end":{"line":163,"column":74},"skip":true}]},"12":{"line":166,"type":"if","locations":[{"start":{"line":166,"column":16},"end":{"line":166,"column":16},"skip":true},{"start":{"line":166,"column":16},"end":{"line":166,"column":16},"skip":true}]},"13":{"line":182,"type":"if","locations":[{"start":{"line":182,"column":12},"end":{"line":182,"column":12},"skip":true},{"start":{"line":182,"column":12},"end":{"line":182,"column":12},"skip":true}]},"14":{"line":182,"type":"binary-expr","locations":[{"start":{"line":182,"column":16},"end":{"line":182,"column":61},"skip":true},{"start":{"line":182,"column":66},"end":{"line":182,"column":72},"skip":true},{"start":{"line":182,"column":77},"end":{"line":182,"column":82},"skip":true},{"start":{"line":183,"column":20},"end":{"line":183,"column":39},"skip":true},{"start":{"line":184,"column":20},"end":{"line":184,"column":49},"skip":true},{"start":{"line":185,"column":20},"end":{"line":185,"column":58},"skip":true},{"start":{"line":186,"column":20},"end":{"line":186,"column":68},"skip":true}]},"15":{"line":203,"type":"if","locations":[{"start":{"line":203,"column":16},"end":{"line":203,"column":16},"skip":true},{"start":{"line":203,"column":16},"end":{"line":203,"column":16},"skip":true}]},"16":{"line":208,"type":"cond-expr","locations":[{"start":{"line":209,"column":26},"end":{"line":209,"column":29},"skip":true},{"start":{"line":210,"column":26},"end":{"line":210,"column":54},"skip":true}]},"17":{"line":238,"type":"binary-expr","locations":[{"start":{"line":238,"column":27},"end":{"line":238,"column":43},"skip":true},{"start":{"line":238,"column":47},"end":{"line":238,"column":49},"skip":true}]},"18":{"line":332,"type":"if","locations":[{"start":{"line":332,"column":8},"end":{"line":332,"column":8},"skip":true},{"start":{"line":332,"column":8},"end":{"line":332,"column":8},"skip":true}]},"19":{"line":349,"type":"switch","locations":[{"start":{"line":350,"column":20},"end":{"line":351,"column":64},"skip":true},{"start":{"line":352,"column":20},"end":{"line":353,"column":40},"skip":true},{"start":{"line":354,"column":20},"end":{"line":355,"column":40},"skip":true},{"start":{"line":356,"column":20},"end":{"line":357,"column":39},"skip":true}]},"20":{"line":362,"type":"if","locations":[{"start":{"line":362,"column":8},"end":{"line":362,"column":8},"skip":true},{"start":{"line":362,"column":8},"end":{"line":362,"column":8},"skip":true}]},"21":{"line":362,"type":"binary-expr","locations":[{"start":{"line":362,"column":12},"end":{"line":362,"column":40},"skip":true},{"start":{"line":362,"column":44},"end":{"line":362,"column":67},"skip":true}]},"22":{"line":366,"type":"binary-expr","locations":[{"start":{"line":366,"column":12},"end":{"line":366,"column":50},"skip":true},{"start":{"line":367,"column":12},"end":{"line":367,"column":53},"skip":true}]},"23":{"line":369,"type":"binary-expr","locations":[{"start":{"line":369,"column":12},"end":{"line":369,"column":62},"skip":true},{"start":{"line":370,"column":12},"end":{"line":375,"column":36},"skip":true}]},"24":{"line":376,"type":"binary-expr","locations":[{"start":{"line":376,"column":43},"end":{"line":376,"column":75},"skip":true},{"start":{"line":376,"column":79},"end":{"line":376,"column":81},"skip":true}]},"25":{"line":379,"type":"if","locations":[{"start":{"line":379,"column":8},"end":{"line":379,"column":8},"skip":true},{"start":{"line":379,"column":8},"end":{"line":379,"column":8},"skip":true}]},"26":{"line":383,"type":"if","locations":[{"start":{"line":383,"column":8},"end":{"line":383,"column":8},"skip":true},{"start":{"line":383,"column":8},"end":{"line":383,"column":8},"skip":true}]},"27":{"line":386,"type":"binary-expr","locations":[{"start":{"line":386,"column":27},"end":{"line":386,"column":43},"skip":true},{"start":{"line":386,"column":47},"end":{"line":386,"column":53},"skip":true}]},"28":{"line":390,"type":"if","locations":[{"start":{"line":390,"column":12},"end":{"line":390,"column":12},"skip":true},{"start":{"line":390,"column":12},"end":{"line":390,"column":12},"skip":true}]}},"code":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","/*","example.js","","quickstart example","","instruction","    1. save this script as example.js","    2. run the shell command:","        $ npm install npmdoc-mysql && PORT=8081 node example.js","    3. play with the browser-demo on http://127.0.0.1:8081","*/","","","","/* istanbul instrument in package npmdoc_mysql */","/*jslint","    bitwise: true,","    browser: true,","    maxerr: 8,","    maxlen: 96,","    node: true,","    nomen: true,","    regexp: true,","    stupid: true","*/","(function () {","    'use strict';","    var local;","","","","    // run shared js-env code - pre-init","    (function () {","        // init local","        local = {};","        // init modeJs","        local.modeJs = (function () {","            try {","                return typeof navigator.userAgent === 'string' &&","                    typeof document.querySelector('body') === 'object' &&","                    typeof XMLHttpRequest.prototype.open === 'function' &&","                    'browser';","            } catch (errorCaughtBrowser) {","                return module.exports &&","                    typeof process.versions.node === 'string' &&","                    typeof require('http').createServer === 'function' &&","                    'node';","            }","        }());","        // init global","        local.global = local.modeJs === 'browser'","            ? window","            : global;","        // init utility2_rollup","        local = local.global.utility2_rollup || (local.modeJs === 'browser'","            ? local.global.utility2_npmdoc_mysql","            : global.utility2_moduleExports);","        // export local","        local.global.local = local;","    }());","    switch (local.modeJs) {","","","","    // post-init","    // run browser js-env code - post-init","    /* istanbul ignore next */","    case 'browser':","        local.testRunBrowser = function (event) {","            if (!event || (event &&","                    event.currentTarget &&","                    event.currentTarget.className &&","                    event.currentTarget.className.includes &&","                    event.currentTarget.className.includes('onreset'))) {","                // reset output","                Array.from(","                    document.querySelectorAll('body > .resettable')","                ).forEach(function (element) {","                    switch (element.tagName) {","                    case 'INPUT':","                    case 'TEXTAREA':","                        element.value = '';","                        break;","                    default:","                        element.textContent = '';","                    }","                });","            }","            switch (event && event.currentTarget && event.currentTarget.id) {","            case 'testRunButton1':","                // show tests","                if (document.querySelector('#testReportDiv1').style.display === 'none') {","                    document.querySelector('#testReportDiv1').style.display = 'block';","                    document.querySelector('#testRunButton1').textContent =","                        'hide internal test';","                    local.modeTest = true;","                    local.testRunDefault(local);","                // hide tests","                } else {","                    document.querySelector('#testReportDiv1').style.display = 'none';","                    document.querySelector('#testRunButton1').textContent = 'run internal test';","                }","                break;","            // custom-case","            default:","                break;","            }","            if (document.querySelector('#inputTextareaEval1') && (!event || (event &&","                    event.currentTarget &&","                    event.currentTarget.className &&","                    event.currentTarget.className.includes &&","                    event.currentTarget.className.includes('oneval')))) {","                // try to eval input-code","                try {","                    /*jslint evil: true*/","                    eval(document.querySelector('#inputTextareaEval1').value);","                } catch (errorCaught) {","                    console.error(errorCaught.stack);","                }","            }","        };","        // log stderr and stdout to #outputTextareaStdout1","        ['error', 'log'].forEach(function (key) {","            console[key + '_original'] = console[key];","            console[key] = function () {","                var element;","                console[key + '_original'].apply(console, arguments);","                element = document.querySelector('#outputTextareaStdout1');","                if (!element) {","                    return;","                }","                // append text to #outputTextareaStdout1","                element.value += Array.from(arguments).map(function (arg) {","                    return typeof arg === 'string'","                        ? arg","                        : JSON.stringify(arg, null, 4);","                }).join(' ') + '\\n';","                // scroll textarea to bottom","                element.scrollTop = element.scrollHeight;","            };","        });","        // init event-handling","        ['change', 'click', 'keyup'].forEach(function (event) {","            Array.from(document.querySelectorAll('.on' + event)).forEach(function (element) {","                element.addEventListener(event, local.testRunBrowser);","            });","        });","        // run tests","        local.testRunBrowser();","        break;","","","","    // run node js-env code - post-init","    /* istanbul ignore next */","    case 'node':","        // export local","        module.exports = local;","        // require modules","        local.fs = require('fs');","        local.http = require('http');","        local.url = require('url');","        // init assets","        local.assetsDict = local.assetsDict || {};","        /* jslint-ignore-begin */","        local.assetsDict['/assets.index.template.html'] = '\\","<!doctype html>\\n\\","<html lang=\"en\">\\n\\","<head>\\n\\","<meta charset=\"UTF-8\">\\n\\","<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\\n\\","<title>{{env.npm_package_name}} (v{{env.npm_package_version}})</title>\\n\\","<style>\\n\\","/*csslint\\n\\","    box-sizing: false,\\n\\","    universal-selector: false\\n\\","*/\\n\\","* {\\n\\","    box-sizing: border-box;\\n\\","}\\n\\","body {\\n\\","    background: #dde;\\n\\","    font-family: Arial, Helvetica, sans-serif;\\n\\","    margin: 2rem;\\n\\","}\\n\\","body > * {\\n\\","    margin-bottom: 1rem;\\n\\","}\\n\\",".utility2FooterDiv {\\n\\","    margin-top: 20px;\\n\\","    text-align: center;\\n\\","}\\n\\","</style>\\n\\","<style>\\n\\","/*csslint\\n\\","*/\\n\\","textarea {\\n\\","    font-family: monospace;\\n\\","    height: 10rem;\\n\\","    width: 100%;\\n\\","}\\n\\","textarea[readonly] {\\n\\","    background: #ddd;\\n\\","}\\n\\","</style>\\n\\","</head>\\n\\","<body>\\n\\","<!-- utility2-comment\\n\\","<div id=\"ajaxProgressDiv1\" style=\"background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 0.5s, width 1.5s; width: 25%;\"></div>\\n\\","utility2-comment -->\\n\\","<h1>\\n\\","<!-- utility2-comment\\n\\","    <a\\n\\","        {{#if env.npm_package_homepage}}\\n\\","        href=\"{{env.npm_package_homepage}}\"\\n\\","        {{/if env.npm_package_homepage}}\\n\\","        target=\"_blank\"\\n\\","    >\\n\\","utility2-comment -->\\n\\","        {{env.npm_package_name}} (v{{env.npm_package_version}})\\n\\","<!-- utility2-comment\\n\\","    </a>\\n\\","utility2-comment -->\\n\\","</h1>\\n\\","<h3>{{env.npm_package_description}}</h3>\\n\\","<!-- utility2-comment\\n\\","<h4><a download href=\"assets.app.js\">download standalone app</a></h4>\\n\\","<button class=\"onclick onreset\" id=\"testRunButton1\">run internal test</button><br>\\n\\","<div id=\"testReportDiv1\" style=\"display: none;\"></div>\\n\\","utility2-comment -->\\n\\","\\n\\","\\n\\","\\n\\","<label>stderr and stdout</label>\\n\\","<textarea class=\"resettable\" id=\"outputTextareaStdout1\" readonly></textarea>\\n\\","<!-- utility2-comment\\n\\","{{#if isRollup}}\\n\\","<script src=\"assets.app.js\"></script>\\n\\","{{#unless isRollup}}\\n\\","utility2-comment -->\\n\\","<script src=\"assets.utility2.rollup.js\"></script>\\n\\","<script src=\"jsonp.utility2._stateInit?callback=window.utility2._stateInit\"></script>\\n\\","<script src=\"assets.npmdoc_mysql.rollup.js\"></script>\\n\\","<script src=\"assets.example.js\"></script>\\n\\","<script src=\"assets.test.js\"></script>\\n\\","<!-- utility2-comment\\n\\","{{/if isRollup}}\\n\\","utility2-comment -->\\n\\","<div class=\"utility2FooterDiv\">\\n\\","    [ this app was created with\\n\\","    <a href=\"https://github.com/kaizhu256/node-utility2\" target=\"_blank\">utility2</a>\\n\\","    ]\\n\\","</div>\\n\\","</body>\\n\\","</html>\\n\\","';","        /* jslint-ignore-end */","        if (local.templateRender) {","            local.assetsDict['/'] = local.templateRender(","                local.assetsDict['/assets.index.template.html'],","                {","                    env: local.objectSetDefault(local.env, {","                        npm_package_description: 'the greatest app in the world!',","                        npm_package_name: 'my-app',","                        npm_package_nameAlias: 'my_app',","                        npm_package_version: '0.0.1'","                    })","                }","            );","        } else {","            local.assetsDict['/'] = local.assetsDict['/assets.index.template.html']","                .replace((/\\{\\{env\\.(\\w+?)\\}\\}/g), function (match0, match1) {","                    // jslint-hack","                    String(match0);","                    switch (match1) {","                    case 'npm_package_description':","                        return 'the greatest app in the world!';","                    case 'npm_package_name':","                        return 'my-app';","                    case 'npm_package_nameAlias':","                        return 'my_app';","                    case 'npm_package_version':","                        return '0.0.1';","                    }","                });","        }","        // run the cli","        if (local.global.utility2_rollup || module !== require.main) {","            break;","        }","        local.assetsDict['/assets.example.js'] =","            local.assetsDict['/assets.example.js'] ||","            local.fs.readFileSync(__filename, 'utf8');","        local.assetsDict['/assets.npmdoc_mysql.rollup.js'] =","            local.assetsDict['/assets.npmdoc_mysql.rollup.js'] ||","            local.fs.readFileSync(","                // buildCustomFrom-hack","                local.npmdoc_mysql.__dirname +","                    '/lib.npmdoc_mysql.js',","                'utf8'","            ).replace((/^#!/), '//');","        local.assetsDict['/favicon.ico'] = local.assetsDict['/favicon.ico'] || '';","        // if $npm_config_timeout_exit exists,","        // then exit this process after $npm_config_timeout_exit ms","        if (Number(process.env.npm_config_timeout_exit)) {","            setTimeout(process.exit, Number(process.env.npm_config_timeout_exit));","        }","        // start server","        if (local.global.utility2_serverHttp1) {","            break;","        }","        process.env.PORT = process.env.PORT || '8081';","        console.error('server starting on port ' + process.env.PORT);","        local.http.createServer(function (request, response) {","            request.urlParsed = local.url.parse(request.url);","            if (local.assetsDict[request.urlParsed.pathname] !== undefined) {","                response.end(local.assetsDict[request.urlParsed.pathname]);","                return;","            }","            response.statusCode = 404;","            response.end();","        }).listen(process.env.PORT);","        break;","    }","}());"]};
-}
-__cov_6666aa8145e0b = __cov_6666aa8145e0b['/home/travis/build/npmdoc/node-npmdoc-mysql/example.js'];
-__cov_6666aa8145e0b.s['1']++;(function(){'use strict';__cov_6666aa8145e0b.f['1']++;__cov_6666aa8145e0b.s['2']++;var local;__cov_6666aa8145e0b.s['3']++;(function(){__cov_6666aa8145e0b.f['2']++;__cov_6666aa8145e0b.s['4']++;local={};__cov_6666aa8145e0b.s['5']++;local.modeJs=function(){__cov_6666aa8145e0b.f['3']++;__cov_6666aa8145e0b.s['6']++;try{__cov_6666aa8145e0b.s['7']++;return(__cov_6666aa8145e0b.b['1'][0]++,typeof navigator.userAgent==='string')&&(__cov_6666aa8145e0b.b['1'][1]++,typeof document.querySelector('body')==='object')&&(__cov_6666aa8145e0b.b['1'][2]++,typeof XMLHttpRequest.prototype.open==='function')&&(__cov_6666aa8145e0b.b['1'][3]++,'browser');}catch(errorCaughtBrowser){__cov_6666aa8145e0b.s['8']++;return(__cov_6666aa8145e0b.b['2'][0]++,module.exports)&&(__cov_6666aa8145e0b.b['2'][1]++,typeof process.versions.node==='string')&&(__cov_6666aa8145e0b.b['2'][2]++,typeof require('http').createServer==='function')&&(__cov_6666aa8145e0b.b['2'][3]++,'node');}}();__cov_6666aa8145e0b.s['9']++;local.global=local.modeJs==='browser'?(__cov_6666aa8145e0b.b['3'][0]++,window):(__cov_6666aa8145e0b.b['3'][1]++,global);__cov_6666aa8145e0b.s['10']++;local=(__cov_6666aa8145e0b.b['4'][0]++,local.global.utility2_rollup)||(__cov_6666aa8145e0b.b['4'][1]++,local.modeJs==='browser'?(__cov_6666aa8145e0b.b['5'][0]++,local.global.utility2_npmdoc_mysql):(__cov_6666aa8145e0b.b['5'][1]++,global.utility2_moduleExports));__cov_6666aa8145e0b.s['11']++;local.global.local=local;}());__cov_6666aa8145e0b.s['12']++;switch(local.modeJs){case'browser':__cov_6666aa8145e0b.b['6'][0]++;__cov_6666aa8145e0b.s['13']++;local.testRunBrowser=function(event){__cov_6666aa8145e0b.f['4']++;__cov_6666aa8145e0b.s['14']++;if((__cov_6666aa8145e0b.b['8'][0]++,!event)||(__cov_6666aa8145e0b.b['8'][1]++,event)&&(__cov_6666aa8145e0b.b['8'][2]++,event.currentTarget)&&(__cov_6666aa8145e0b.b['8'][3]++,event.currentTarget.className)&&(__cov_6666aa8145e0b.b['8'][4]++,event.currentTarget.className.includes)&&(__cov_6666aa8145e0b.b['8'][5]++,event.currentTarget.className.includes('onreset'))){__cov_6666aa8145e0b.b['7'][0]++;__cov_6666aa8145e0b.s['15']++;Array.from(document.querySelectorAll('body > .resettable')).forEach(function(element){__cov_6666aa8145e0b.f['5']++;__cov_6666aa8145e0b.s['16']++;switch(element.tagName){case'INPUT':__cov_6666aa8145e0b.b['9'][0]++;case'TEXTAREA':__cov_6666aa8145e0b.b['9'][1]++;__cov_6666aa8145e0b.s['17']++;element.value='';__cov_6666aa8145e0b.s['18']++;break;default:__cov_6666aa8145e0b.b['9'][2]++;__cov_6666aa8145e0b.s['19']++;element.textContent='';}});}else{__cov_6666aa8145e0b.b['7'][1]++;}__cov_6666aa8145e0b.s['20']++;switch((__cov_6666aa8145e0b.b['11'][0]++,event)&&(__cov_6666aa8145e0b.b['11'][1]++,event.currentTarget)&&(__cov_6666aa8145e0b.b['11'][2]++,event.currentTarget.id)){case'testRunButton1':__cov_6666aa8145e0b.b['10'][0]++;__cov_6666aa8145e0b.s['21']++;if(document.querySelector('#testReportDiv1').style.display==='none'){__cov_6666aa8145e0b.b['12'][0]++;__cov_6666aa8145e0b.s['22']++;document.querySelector('#testReportDiv1').style.display='block';__cov_6666aa8145e0b.s['23']++;document.querySelector('#testRunButton1').textContent='hide internal test';__cov_6666aa8145e0b.s['24']++;local.modeTest=true;__cov_6666aa8145e0b.s['25']++;local.testRunDefault(local);}else{__cov_6666aa8145e0b.b['12'][1]++;__cov_6666aa8145e0b.s['26']++;document.querySelector('#testReportDiv1').style.display='none';__cov_6666aa8145e0b.s['27']++;document.querySelector('#testRunButton1').textContent='run internal test';}__cov_6666aa8145e0b.s['28']++;break;default:__cov_6666aa8145e0b.b['10'][1]++;__cov_6666aa8145e0b.s['29']++;break;}__cov_6666aa8145e0b.s['30']++;if((__cov_6666aa8145e0b.b['14'][0]++,document.querySelector('#inputTextareaEval1'))&&((__cov_6666aa8145e0b.b['14'][1]++,!event)||(__cov_6666aa8145e0b.b['14'][2]++,event)&&(__cov_6666aa8145e0b.b['14'][3]++,event.currentTarget)&&(__cov_6666aa8145e0b.b['14'][4]++,event.currentTarget.className)&&(__cov_6666aa8145e0b.b['14'][5]++,event.currentTarget.className.includes)&&(__cov_6666aa8145e0b.b['14'][6]++,event.currentTarget.className.includes('oneval')))){__cov_6666aa8145e0b.b['13'][0]++;__cov_6666aa8145e0b.s['31']++;try{__cov_6666aa8145e0b.s['32']++;eval(document.querySelector('#inputTextareaEval1').value);}catch(errorCaught){__cov_6666aa8145e0b.s['33']++;console.error(errorCaught.stack);}}else{__cov_6666aa8145e0b.b['13'][1]++;}};__cov_6666aa8145e0b.s['34']++;['error','log'].forEach(function(key){__cov_6666aa8145e0b.f['6']++;__cov_6666aa8145e0b.s['35']++;console[key+'_original']=console[key];__cov_6666aa8145e0b.s['36']++;console[key]=function(){__cov_6666aa8145e0b.f['7']++;__cov_6666aa8145e0b.s['37']++;var element;__cov_6666aa8145e0b.s['38']++;console[key+'_original'].apply(console,arguments);__cov_6666aa8145e0b.s['39']++;element=document.querySelector('#outputTextareaStdout1');__cov_6666aa8145e0b.s['40']++;if(!element){__cov_6666aa8145e0b.b['15'][0]++;__cov_6666aa8145e0b.s['41']++;return;}else{__cov_6666aa8145e0b.b['15'][1]++;}__cov_6666aa8145e0b.s['42']++;element.value+=Array.from(arguments).map(function(arg){__cov_6666aa8145e0b.f['8']++;__cov_6666aa8145e0b.s['43']++;return typeof arg==='string'?(__cov_6666aa8145e0b.b['16'][0]++,arg):(__cov_6666aa8145e0b.b['16'][1]++,JSON.stringify(arg,null,4));}).join(' ')+'\n';__cov_6666aa8145e0b.s['44']++;element.scrollTop=element.scrollHeight;};});__cov_6666aa8145e0b.s['45']++;['change','click','keyup'].forEach(function(event){__cov_6666aa8145e0b.f['9']++;__cov_6666aa8145e0b.s['46']++;Array.from(document.querySelectorAll('.on'+event)).forEach(function(element){__cov_6666aa8145e0b.f['10']++;__cov_6666aa8145e0b.s['47']++;element.addEventListener(event,local.testRunBrowser);});});__cov_6666aa8145e0b.s['48']++;local.testRunBrowser();__cov_6666aa8145e0b.s['49']++;break;case'node':__cov_6666aa8145e0b.b['6'][1]++;__cov_6666aa8145e0b.s['50']++;module.exports=local;__cov_6666aa8145e0b.s['51']++;local.fs=require('fs');__cov_6666aa8145e0b.s['52']++;local.http=require('http');__cov_6666aa8145e0b.s['53']++;local.url=require('url');__cov_6666aa8145e0b.s['54']++;local.assetsDict=(__cov_6666aa8145e0b.b['17'][0]++,local.assetsDict)||(__cov_6666aa8145e0b.b['17'][1]++,{});__cov_6666aa8145e0b.s['55']++;local.assetsDict['/assets.index.template.html']='<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>{{env.npm_package_name}} (v{{env.npm_package_version}})</title>\n<style>\n/*csslint\n    box-sizing: false,\n    universal-selector: false\n*/\n* {\n    box-sizing: border-box;\n}\nbody {\n    background: #dde;\n    font-family: Arial, Helvetica, sans-serif;\n    margin: 2rem;\n}\nbody > * {\n    margin-bottom: 1rem;\n}\n.utility2FooterDiv {\n    margin-top: 20px;\n    text-align: center;\n}\n</style>\n<style>\n/*csslint\n*/\ntextarea {\n    font-family: monospace;\n    height: 10rem;\n    width: 100%;\n}\ntextarea[readonly] {\n    background: #ddd;\n}\n</style>\n</head>\n<body>\n<!-- utility2-comment\n<div id="ajaxProgressDiv1" style="background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 0.5s, width 1.5s; width: 25%;"></div>\nutility2-comment -->\n<h1>\n<!-- utility2-comment\n    <a\n        {{#if env.npm_package_homepage}}\n        href="{{env.npm_package_homepage}}"\n        {{/if env.npm_package_homepage}}\n        target="_blank"\n    >\nutility2-comment -->\n        {{env.npm_package_name}} (v{{env.npm_package_version}})\n<!-- utility2-comment\n    </a>\nutility2-comment -->\n</h1>\n<h3>{{env.npm_package_description}}</h3>\n<!-- utility2-comment\n<h4><a download href="assets.app.js">download standalone app</a></h4>\n<button class="onclick onreset" id="testRunButton1">run internal test</button><br>\n<div id="testReportDiv1" style="display: none;"></div>\nutility2-comment -->\n\n\n\n<label>stderr and stdout</label>\n<textarea class="resettable" id="outputTextareaStdout1" readonly></textarea>\n<!-- utility2-comment\n{{#if isRollup}}\n<script src="assets.app.js"></script>\n{{#unless isRollup}}\nutility2-comment -->\n<script src="assets.utility2.rollup.js"></script>\n<script src="jsonp.utility2._stateInit?callback=window.utility2._stateInit"></script>\n<script src="assets.npmdoc_mysql.rollup.js"></script>\n<script src="assets.example.js"></script>\n<script src="assets.test.js"></script>\n<!-- utility2-comment\n{{/if isRollup}}\nutility2-comment -->\n<div class="utility2FooterDiv">\n    [ this app was created with\n    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>\n    ]\n</div>\n</body>\n</html>\n';__cov_6666aa8145e0b.s['56']++;if(local.templateRender){__cov_6666aa8145e0b.b['18'][0]++;__cov_6666aa8145e0b.s['57']++;local.assetsDict['/']=local.templateRender(local.assetsDict['/assets.index.template.html'],{env:local.objectSetDefault(local.env,{npm_package_description:'the greatest app in the world!',npm_package_name:'my-app',npm_package_nameAlias:'my_app',npm_package_version:'0.0.1'})});}else{__cov_6666aa8145e0b.b['18'][1]++;__cov_6666aa8145e0b.s['58']++;local.assetsDict['/']=local.assetsDict['/assets.index.template.html'].replace(/\{\{env\.(\w+?)\}\}/g,function(match0,match1){__cov_6666aa8145e0b.f['11']++;__cov_6666aa8145e0b.s['59']++;String(match0);__cov_6666aa8145e0b.s['60']++;switch(match1){case'npm_package_description':__cov_6666aa8145e0b.b['19'][0]++;__cov_6666aa8145e0b.s['61']++;return'the greatest app in the world!';case'npm_package_name':__cov_6666aa8145e0b.b['19'][1]++;__cov_6666aa8145e0b.s['62']++;return'my-app';case'npm_package_nameAlias':__cov_6666aa8145e0b.b['19'][2]++;__cov_6666aa8145e0b.s['63']++;return'my_app';case'npm_package_version':__cov_6666aa8145e0b.b['19'][3]++;__cov_6666aa8145e0b.s['64']++;return'0.0.1';}});}__cov_6666aa8145e0b.s['65']++;if((__cov_6666aa8145e0b.b['21'][0]++,local.global.utility2_rollup)||(__cov_6666aa8145e0b.b['21'][1]++,module!==require.main)){__cov_6666aa8145e0b.b['20'][0]++;__cov_6666aa8145e0b.s['66']++;break;}else{__cov_6666aa8145e0b.b['20'][1]++;}__cov_6666aa8145e0b.s['67']++;local.assetsDict['/assets.example.js']=(__cov_6666aa8145e0b.b['22'][0]++,local.assetsDict['/assets.example.js'])||(__cov_6666aa8145e0b.b['22'][1]++,local.fs.readFileSync(__filename,'utf8'));__cov_6666aa8145e0b.s['68']++;local.assetsDict['/assets.npmdoc_mysql.rollup.js']=(__cov_6666aa8145e0b.b['23'][0]++,local.assetsDict['/assets.npmdoc_mysql.rollup.js'])||(__cov_6666aa8145e0b.b['23'][1]++,local.fs.readFileSync(local.npmdoc_mysql.__dirname+'/lib.npmdoc_mysql.js','utf8').replace(/^#!/,'//'));__cov_6666aa8145e0b.s['69']++;local.assetsDict['/favicon.ico']=(__cov_6666aa8145e0b.b['24'][0]++,local.assetsDict['/favicon.ico'])||(__cov_6666aa8145e0b.b['24'][1]++,'');__cov_6666aa8145e0b.s['70']++;if(Number(process.env.npm_config_timeout_exit)){__cov_6666aa8145e0b.b['25'][0]++;__cov_6666aa8145e0b.s['71']++;setTimeout(process.exit,Number(process.env.npm_config_timeout_exit));}else{__cov_6666aa8145e0b.b['25'][1]++;}__cov_6666aa8145e0b.s['72']++;if(local.global.utility2_serverHttp1){__cov_6666aa8145e0b.b['26'][0]++;__cov_6666aa8145e0b.s['73']++;break;}else{__cov_6666aa8145e0b.b['26'][1]++;}__cov_6666aa8145e0b.s['74']++;process.env.PORT=(__cov_6666aa8145e0b.b['27'][0]++,process.env.PORT)||(__cov_6666aa8145e0b.b['27'][1]++,'8081');__cov_6666aa8145e0b.s['75']++;console.error('server starting on port '+process.env.PORT);__cov_6666aa8145e0b.s['76']++;local.http.createServer(function(request,response){__cov_6666aa8145e0b.f['12']++;__cov_6666aa8145e0b.s['77']++;request.urlParsed=local.url.parse(request.url);__cov_6666aa8145e0b.s['78']++;if(local.assetsDict[request.urlParsed.pathname]!==undefined){__cov_6666aa8145e0b.b['28'][0]++;__cov_6666aa8145e0b.s['79']++;response.end(local.assetsDict[request.urlParsed.pathname]);__cov_6666aa8145e0b.s['80']++;return;}else{__cov_6666aa8145e0b.b['28'][1]++;}__cov_6666aa8145e0b.s['81']++;response.statusCode=404;__cov_6666aa8145e0b.s['82']++;response.end();}).listen(process.env.PORT);__cov_6666aa8145e0b.s['83']++;break;}}());
+/*
+example.js
+
+quickstart example
+
+instruction
+    1. save this script as example.js
+    2. run the shell command:
+        $ npm install npmdoc-mysql && PORT=8081 node example.js
+    3. play with the browser-demo on http://127.0.0.1:8081
+*/
+
+
+
+/* istanbul instrument in package npmdoc_mysql */
+/*jslint
+    bitwise: true,
+    browser: true,
+    maxerr: 8,
+    maxlen: 96,
+    node: true,
+    nomen: true,
+    regexp: true,
+    stupid: true
+*/
+(function () {
+    'use strict';
+    var local;
+
+
+
+    // run shared js-env code - pre-init
+    (function () {
+        // init local
+        local = {};
+        // init modeJs
+        local.modeJs = (function () {
+            try {
+                return typeof navigator.userAgent === 'string' &&
+                    typeof document.querySelector('body') === 'object' &&
+                    typeof XMLHttpRequest.prototype.open === 'function' &&
+                    'browser';
+            } catch (errorCaughtBrowser) {
+                return module.exports &&
+                    typeof process.versions.node === 'string' &&
+                    typeof require('http').createServer === 'function' &&
+                    'node';
+            }
+        }());
+        // init global
+        local.global = local.modeJs === 'browser'
+            ? window
+            : global;
+        // init utility2_rollup
+        local = local.global.utility2_rollup || (local.modeJs === 'browser'
+            ? local.global.utility2_npmdoc_mysql
+            : global.utility2_moduleExports);
+        // export local
+        local.global.local = local;
+    }());
+    switch (local.modeJs) {
+
+
+
+    // post-init
+    // run browser js-env code - post-init
+    /* istanbul ignore next */
+    case 'browser':
+        local.testRunBrowser = function (event) {
+            if (!event || (event &&
+                    event.currentTarget &&
+                    event.currentTarget.className &&
+                    event.currentTarget.className.includes &&
+                    event.currentTarget.className.includes('onreset'))) {
+                // reset output
+                Array.from(
+                    document.querySelectorAll('body > .resettable')
+                ).forEach(function (element) {
+                    switch (element.tagName) {
+                    case 'INPUT':
+                    case 'TEXTAREA':
+                        element.value = '';
+                        break;
+                    default:
+                        element.textContent = '';
+                    }
+                });
+            }
+            switch (event && event.currentTarget && event.currentTarget.id) {
+            case 'testRunButton1':
+                // show tests
+                if (document.querySelector('#testReportDiv1').style.display === 'none') {
+                    document.querySelector('#testReportDiv1').style.display = 'block';
+                    document.querySelector('#testRunButton1').textContent =
+                        'hide internal test';
+                    local.modeTest = true;
+                    local.testRunDefault(local);
+                // hide tests
+                } else {
+                    document.querySelector('#testReportDiv1').style.display = 'none';
+                    document.querySelector('#testRunButton1').textContent = 'run internal test';
+                }
+                break;
+            // custom-case
+            default:
+                break;
+            }
+            if (document.querySelector('#inputTextareaEval1') && (!event || (event &&
+                    event.currentTarget &&
+                    event.currentTarget.className &&
+                    event.currentTarget.className.includes &&
+                    event.currentTarget.className.includes('oneval')))) {
+                // try to eval input-code
+                try {
+                    /*jslint evil: true*/
+                    eval(document.querySelector('#inputTextareaEval1').value);
+                } catch (errorCaught) {
+                    console.error(errorCaught.stack);
+                }
+            }
+        };
+        // log stderr and stdout to #outputTextareaStdout1
+        ['error', 'log'].forEach(function (key) {
+            console[key + '_original'] = console[key];
+            console[key] = function () {
+                var element;
+                console[key + '_original'].apply(console, arguments);
+                element = document.querySelector('#outputTextareaStdout1');
+                if (!element) {
+                    return;
+                }
+                // append text to #outputTextareaStdout1
+                element.value += Array.from(arguments).map(function (arg) {
+                    return typeof arg === 'string'
+                        ? arg
+                        : JSON.stringify(arg, null, 4);
+                }).join(' ') + '\n';
+                // scroll textarea to bottom
+                element.scrollTop = element.scrollHeight;
+            };
+        });
+        // init event-handling
+        ['change', 'click', 'keyup'].forEach(function (event) {
+            Array.from(document.querySelectorAll('.on' + event)).forEach(function (element) {
+                element.addEventListener(event, local.testRunBrowser);
+            });
+        });
+        // run tests
+        local.testRunBrowser();
+        break;
+
+
+
+    // run node js-env code - post-init
+    /* istanbul ignore next */
+    case 'node':
+        // export local
+        module.exports = local;
+        // require modules
+        local.fs = require('fs');
+        local.http = require('http');
+        local.url = require('url');
+        // init assets
+        local.assetsDict = local.assetsDict || {};
+        /* jslint-ignore-begin */
+        local.assetsDict['/assets.index.template.html'] = '\
+<!doctype html>\n\
+<html lang="en">\n\
+<head>\n\
+<meta charset="UTF-8">\n\
+<meta name="viewport" content="width=device-width, initial-scale=1">\n\
+<title>{{env.npm_package_name}} (v{{env.npm_package_version}})</title>\n\
+<style>\n\
+/*csslint\n\
+    box-sizing: false,\n\
+    universal-selector: false\n\
+*/\n\
+* {\n\
+    box-sizing: border-box;\n\
+}\n\
+body {\n\
+    background: #dde;\n\
+    font-family: Arial, Helvetica, sans-serif;\n\
+    margin: 2rem;\n\
+}\n\
+body > * {\n\
+    margin-bottom: 1rem;\n\
+}\n\
+.utility2FooterDiv {\n\
+    margin-top: 20px;\n\
+    text-align: center;\n\
+}\n\
+</style>\n\
+<style>\n\
+/*csslint\n\
+*/\n\
+textarea {\n\
+    font-family: monospace;\n\
+    height: 10rem;\n\
+    width: 100%;\n\
+}\n\
+textarea[readonly] {\n\
+    background: #ddd;\n\
+}\n\
+</style>\n\
+</head>\n\
+<body>\n\
+<!-- utility2-comment\n\
+<div id="ajaxProgressDiv1" style="background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 0.5s, width 1.5s; width: 25%;"></div>\n\
+utility2-comment -->\n\
+<h1>\n\
+<!-- utility2-comment\n\
+    <a\n\
+        {{#if env.npm_package_homepage}}\n\
+        href="{{env.npm_package_homepage}}"\n\
+        {{/if env.npm_package_homepage}}\n\
+        target="_blank"\n\
+    >\n\
+utility2-comment -->\n\
+        {{env.npm_package_name}} (v{{env.npm_package_version}})\n\
+<!-- utility2-comment\n\
+    </a>\n\
+utility2-comment -->\n\
+</h1>\n\
+<h3>{{env.npm_package_description}}</h3>\n\
+<!-- utility2-comment\n\
+<h4><a download href="assets.app.js">download standalone app</a></h4>\n\
+<button class="onclick onreset" id="testRunButton1">run internal test</button><br>\n\
+<div id="testReportDiv1" style="display: none;"></div>\n\
+utility2-comment -->\n\
+\n\
+\n\
+\n\
+<label>stderr and stdout</label>\n\
+<textarea class="resettable" id="outputTextareaStdout1" readonly></textarea>\n\
+<!-- utility2-comment\n\
+{{#if isRollup}}\n\
+<script src="assets.app.js"></script>\n\
+{{#unless isRollup}}\n\
+utility2-comment -->\n\
+<script src="assets.utility2.rollup.js"></script>\n\
+<script src="jsonp.utility2._stateInit?callback=window.utility2._stateInit"></script>\n\
+<script src="assets.npmdoc_mysql.rollup.js"></script>\n\
+<script src="assets.example.js"></script>\n\
+<script src="assets.test.js"></script>\n\
+<!-- utility2-comment\n\
+{{/if isRollup}}\n\
+utility2-comment -->\n\
+<div class="utility2FooterDiv">\n\
+    [ this app was created with\n\
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>\n\
+    ]\n\
+</div>\n\
+</body>\n\
+</html>\n\
+';
+        /* jslint-ignore-end */
+        if (local.templateRender) {
+            local.assetsDict['/'] = local.templateRender(
+                local.assetsDict['/assets.index.template.html'],
+                {
+                    env: local.objectSetDefault(local.env, {
+                        npm_package_description: 'the greatest app in the world!',
+                        npm_package_name: 'my-app',
+                        npm_package_nameAlias: 'my_app',
+                        npm_package_version: '0.0.1'
+                    })
+                }
+            );
+        } else {
+            local.assetsDict['/'] = local.assetsDict['/assets.index.template.html']
+                .replace((/\{\{env\.(\w+?)\}\}/g), function (match0, match1) {
+                    // jslint-hack
+                    String(match0);
+                    switch (match1) {
+                    case 'npm_package_description':
+                        return 'the greatest app in the world!';
+                    case 'npm_package_name':
+                        return 'my-app';
+                    case 'npm_package_nameAlias':
+                        return 'my_app';
+                    case 'npm_package_version':
+                        return '0.0.1';
+                    }
+                });
+        }
+        // run the cli
+        if (local.global.utility2_rollup || module !== require.main) {
+            break;
+        }
+        local.assetsDict['/assets.example.js'] =
+            local.assetsDict['/assets.example.js'] ||
+            local.fs.readFileSync(__filename, 'utf8');
+        local.assetsDict['/assets.npmdoc_mysql.rollup.js'] =
+            local.assetsDict['/assets.npmdoc_mysql.rollup.js'] ||
+            local.fs.readFileSync(
+                // buildCustomOrg-hack
+                local.npmdoc_mysql.__dirname +
+                    '/lib.npmdoc_mysql.js',
+                'utf8'
+            ).replace((/^#!/), '//');
+        local.assetsDict['/favicon.ico'] = local.assetsDict['/favicon.ico'] || '';
+        // if $npm_config_timeout_exit exists,
+        // then exit this process after $npm_config_timeout_exit ms
+        if (Number(process.env.npm_config_timeout_exit)) {
+            setTimeout(process.exit, Number(process.env.npm_config_timeout_exit));
+        }
+        // start server
+        if (local.global.utility2_serverHttp1) {
+            break;
+        }
+        process.env.PORT = process.env.PORT || '8081';
+        console.error('server starting on port ' + process.env.PORT);
+        local.http.createServer(function (request, response) {
+            request.urlParsed = local.url.parse(request.url);
+            if (local.assetsDict[request.urlParsed.pathname] !== undefined) {
+                response.end(local.assetsDict[request.urlParsed.pathname]);
+                return;
+            }
+            response.statusCode = 404;
+            response.end();
+        }).listen(process.env.PORT);
+        break;
+    }
+}());
