@@ -503,9 +503,11 @@ local.templateApidocHtml = '\
              */
                 var result;
                 local.tryCatchOnError(function () {
+                    file = local.path.resolve(options.dir, file);
+                    console.error('apidocCreate - readExample - ' + file);
                     result = '';
                     result = ('\n\n\n\n\n\n\n\n' +
-                        local.fs.readFileSync(local.path.resolve(options.dir, file), 'utf8') +
+                        local.fs.readFileSync(file, 'utf8').slice(0, 262144) +
                         '\n\n\n\n\n\n\n\n').replace((/\r\n*/g), '\n');
                 }, console.error);
                 return result;
@@ -578,7 +580,7 @@ local.templateApidocHtml = '\
             local.objectSetDefault(options, {
                 blacklistDict: { global: global },
                 circularList: [global],
-                exampleFileList: [],
+                exampleDict: {},
                 exampleList: [],
                 html: '',
                 libFileList: [],
@@ -602,6 +604,7 @@ local.templateApidocHtml = '\
 /\\.\\|\\(\\b\\|_\\)\\(\
 bower_component\\|\
 coverage\\|\
+git\\|\
 min\\|\
 node_module\\|\
 rollup\\|\
@@ -609,11 +612,16 @@ tmp\\|\
 vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
 " ' +
 /* jslint-ignore-end */
-                            ' | sort | head -n 4096').toString()
+                            ' | sort | head -n 256').toString()
                         .split('\n')
                 );
             });
-            options.exampleList = options.exampleList.slice(0, 128).map(readExample);
+            options.exampleList = options.exampleList.filter(function (file) {
+                if (!options.exampleDict[file]) {
+                    options.exampleDict[file] = true;
+                    return true;
+                }
+            }).slice(0, 256).map(readExample);
             // init moduleMain
             local.tryCatchOnError(function () {
                 console.error('apidocCreate - requiring ' + options.dir + ' ...');
@@ -696,6 +704,7 @@ coverage\\|\
 doc\\|dist\\|\
 example\\|external\\|\
 fixture\\|\
+git\\|\
 log\\|\
 min\\|mock\\|\
 node_module\\|\
@@ -705,11 +714,12 @@ test\\|tmp\\|\
 vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
 " ' +
 /* jslint-ignore-end */
-                            ' | sort | head -n 4096').toString()
+                            ' | sort | head -n 256').toString()
                         .split('\n')
                 );
             });
-            options.libFileList.some(function (file) {
+            options.ii = 256;
+            options.libFileList.every(function (file) {
                 local.tryCatchOnError(function () {
                     tmp = {};
                     tmp.name = local.path.basename(file)
@@ -728,17 +738,15 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                     if (!tmp.isFiltered) {
                         return;
                     }
+                    console.error('apidocCreate - libFile - ' + file);
                     tmp.module = options.require(options.dir + '/' + file);
                     if (!(tmp.module && options.circularList.indexOf(tmp.module) < 0)) {
                         return;
                     }
+                    options.ii -= 1;
                     module[tmp.name] = tmp.module;
-                    // update exampleList
-                    options.exampleList.push(readExample(file));
-                    console.error('apidocCreate - ' + options.exampleList.length +
-                        '. added libFile ' + file);
                 }, console.error);
-                return options.exampleList.length >= 256;
+                return options.ii;
             });
             local.apidocModuleDictAdd(options, options.moduleExtraDict);
             Object.keys(options.moduleDict).forEach(function (key) {
@@ -1162,7 +1170,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                     // ensure counter <= 0
                     onParallel.counter = -Math.abs(onParallel.counter);
                 }
-                // call onError when done
+                // call onError when isDone
                 if (onParallel.counter <= 0) {
                     onError(error, data);
                     return;
@@ -1245,7 +1253,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
         /*
          * this function will defer options.action until storage is ready
          */
-            var data, done, objectStore, onError2, request, tmp;
+            var data, isDone, objectStore, onError2, request, tmp;
             onError = onError || function (error) {
                 // validate no error occurred
                 console.assert(!error, error);
@@ -1261,10 +1269,10 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             case 'browser':
                 onError2 = function () {
                     /* istanbul ignore next */
-                    if (done) {
+                    if (isDone) {
                         return;
                     }
-                    done = true;
+                    isDone = true;
                     onError(
                         request && (request.error || request.transaction.error),
                         data || request.result || ''
@@ -2570,13 +2578,13 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
         /*
          * this function will request the data from options.url
          */
-            var chunkList, onError2, timerTimeout, done, request, response, urlParsed;
+            var chunkList, isDone, onError2, timerTimeout, request, response, urlParsed;
             // init onError2
             onError2 = function (error) {
-                if (done) {
+                if (isDone) {
                     return;
                 }
-                done = true;
+                isDone = true;
                 // cleanup timerTimeout
                 clearTimeout(timerTimeout);
                 // cleanup request and response
@@ -2711,7 +2719,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                     // ensure counter <= 0
                     onParallel.counter = -Math.abs(onParallel.counter);
                 }
-                // call onError when done
+                // call onError when isDone
                 if (onParallel.counter <= 0) {
                     onError(error, data);
                     return;
@@ -2729,7 +2737,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
          * this function will
          * 1. async-run onEach in parallel,
          *    with the given options.rateLimit and options.retryLimit
-         * 2. call onError when done
+         * 2. call onError when isDone
          */
             var ii, onEach2, onParallel;
             onEach2 = function () {
@@ -11064,7 +11072,7 @@ local.assetsDict['/favicon.ico'] = '';
         /*
          * this function will handle the error and data passed back to the xhr-connection
          */
-            if (this.done) {
+            if (this.isDone) {
                 return;
             }
             this.error = error;
@@ -11298,10 +11306,10 @@ local.assetsDict['/favicon.ico'] = '';
                 case 'error':
                 case 'load':
                     // do not run more than once
-                    if (xhr.done) {
+                    if (xhr.isDone) {
                         return;
                     }
-                    xhr.done = true;
+                    xhr.isDone = true;
                     // cleanup timerTimeout
                     clearTimeout(timerTimeout);
                     // cleanup requestStream and responseStream
@@ -11571,7 +11579,7 @@ local.assetsDict['/favicon.ico'] = '';
          * - dataURL
          * - text
          */
-            var data, done, reader;
+            var data, isDone, reader;
             if (local.modeJs === 'node') {
                 switch (encoding) {
                 // readAsDataURL
@@ -11592,10 +11600,10 @@ local.assetsDict['/favicon.ico'] = '';
             }
             reader = new local.global.FileReader();
             reader.onabort = reader.onerror = reader.onload = function (event) {
-                if (done) {
+                if (isDone) {
                     return;
                 }
-                done = true;
+                isDone = true;
                 switch (event.type) {
                 case 'abort':
                 case 'error':
@@ -11629,7 +11637,7 @@ local.assetsDict['/favicon.ico'] = '';
         /*
          * this function will spawn an electron process to test options.url
          */
-            var done, modeNext, onNext, onParallel, timerTimeout;
+            var isDone, modeNext, onNext, onParallel, timerTimeout;
             if (typeof local === 'object' && local && local.modeJs === 'node') {
                 local.objectSetDefault(options, local.envSanitize(local.env));
                 options.timeoutDefault = options.timeoutDefault || local.timeoutDefault;
@@ -11893,10 +11901,10 @@ local.assetsDict['/favicon.ico'] = '';
                     }, options.timeoutScreenCapture);
                     break;
                 default:
-                    if (done) {
+                    if (isDone) {
                         return;
                     }
-                    done = true;
+                    isDone = true;
                     // cleanup timerTimeout
                     clearTimeout(timerTimeout);
                     onError(error);
@@ -12133,9 +12141,10 @@ return Utf8ArrayToStr(bff);
                 );
                 // test standalone assets.app.js
                 local.fs.writeFileSync('tmp/assets.app.js', local.assetsDict['/assets.app.js']);
-                local.processSpawnWithTimeout(process.argv[0], ['assets.app.js'], {
+                local.processSpawnWithTimeout('node', ['assets.app.js'], {
                     cwd: 'tmp',
                     env: {
+                        PATH: local.env.PATH,
                         PORT: (Math.random() * 0x10000) | 0x8000,
                         npm_config_timeout_exit: 5000
                     },
@@ -12154,19 +12163,17 @@ return Utf8ArrayToStr(bff);
         /*
          * this function will build the customOrg
          */
-            var done, onError2, onParallel;
+            var isDone, onError2, onParallel;
             if (!local.env.npm_package_buildCustomOrg && !options.modeForce) {
                 onError();
                 return;
             }
-            // ensure exit after 5 minutes
-            setTimeout(process.exit, 5 * 60 * 1000);
             onError2 = function (error) {
                 local.onErrorDefault(error);
-                if (done) {
+                if (isDone) {
                     return;
                 }
-                done = true;
+                isDone = true;
                 // try to recover from error
                 setTimeout(onError, error && local.timeoutDefault);
             };
@@ -12204,6 +12211,8 @@ return Utf8ArrayToStr(bff);
                         keywords: ['coverage', 'test', local.env.npm_package_buildCustomOrg]
                     }
                 }, 2);
+                break;
+            case 'scrapeitall':
                 break;
             }
             // build README.md
@@ -12451,9 +12460,9 @@ return Utf8ArrayToStr(bff);
         /*
          * this function will create a persistent dbTableCustomOrg
          */
-            options = local.objectSetDefault(options, { githubOrg: local.env.GITHUB_ORG });
+            options = local.objectSetDefault(options, { customOrg: local.env.GITHUB_ORG });
             options = local.objectSetDefault(options, {
-                name: 'CustomOrg.' + options.githubOrg,
+                name: 'CustomOrg.' + options.customOrg,
                 sizeLimit: 1000,
                 sortDefault: [{
                     fieldName: '_id'
@@ -12473,7 +12482,7 @@ return Utf8ArrayToStr(bff);
         /*
          * this function will query dbTableCustomOrg
          */
-            options = local.objectSetDefault(options, { githubOrg: local.env.GITHUB_ORG });
+            options = local.objectSetDefault(options, { customOrg: local.env.GITHUB_ORG });
             options = local.objectSetDefault(options, {
                 query: { buildStartedAt: { $not: { $gt: new Date(Date.now() - (
                     Number(options.olderThanLast) || 0
@@ -12488,7 +12497,7 @@ return Utf8ArrayToStr(bff);
          * this function will update dbTableCustomOrg with active, public repos
          */
             var count, dbRowList, self;
-            options = local.objectSetDefault(options, { githubOrg: local.env.GITHUB_ORG });
+            options = local.objectSetDefault(options, { customOrg: local.env.GITHUB_ORG });
             local.onNext(options, function (error, data) {
                 switch (options.modeNext) {
                 case 1:
@@ -12581,13 +12590,13 @@ return Utf8ArrayToStr(bff);
                     self.crudSetManyById(dbRowList
                         .filter(function (dbRow) {
                             return dbRow.private === false && dbRow.slug.indexOf(
-                                options.githubOrg + '/node-' + options.githubOrg + '-'
+                                options.customOrg + '/node-' + options.customOrg + '-'
                             ) === 0;
                         })
                         .map(function (dbRow) {
                             data = dbRow.current_build || {};
                             return {
-                                _id: dbRow.name.replace('node-' + options.githubOrg + '-', ''),
+                                _id: dbRow.name.replace('node-' + options.customOrg + '-', ''),
                                 active: dbRow.active,
                                 buildDuration: data.duration,
                                 buildFinishedAt: data.finished_at,
@@ -12627,9 +12636,9 @@ return Utf8ArrayToStr(bff);
         /*
          * this function will try to determine if the env-key is sensitive
          */
-            return (/(?:\b|_)(?:decrypt|key|pass|private|secret|token)/)
+            return (/(?:\b|_)(?:crypt|decrypt|key|pass|private|secret|token)/)
                 .test(key.toLowerCase()) ||
-                (/Decrypt|Key|Pass|Private|Secret|Token/).test(key);
+                (/Crypt|Decrypt|Key|Pass|Private|Secret|Token/).test(key);
         };
 
         local.envSanitize = function (env) {
@@ -12713,13 +12722,13 @@ return Utf8ArrayToStr(bff);
         /*
          * this function will request the data from options.url
          */
-            var chunkList, done, onError2, timerTimeout, request, response, urlParsed;
+            var chunkList, isDone, onError2, timerTimeout, request, response, urlParsed;
             // init onError2
             onError2 = function (error) {
-                if (done) {
+                if (isDone) {
                     return;
                 }
-                done = true;
+                isDone = true;
                 // cleanup timerTimeout
                 clearTimeout(timerTimeout);
                 // cleanup request and response
@@ -13230,10 +13239,10 @@ return Utf8ArrayToStr(bff);
             // init onError
             onError = function (error) {
                 clearTimeout(timerTimeout);
-                if (!error || options.done) {
+                if (!error || options.isDone) {
                     return;
                 }
-                options.done = true;
+                options.isDone = true;
                 // cleanup client
                 local.streamListCleanup([options.clientRequest, options.clientResponse]);
                 nextMiddleware(error);
@@ -13637,7 +13646,7 @@ return Utf8ArrayToStr(bff);
                     // ensure counter <= 0
                     onParallel.counter = -Math.abs(onParallel.counter);
                 }
-                // call onError when done
+                // call onError when isDone
                 if (onParallel.counter <= 0) {
                     onError(error, data);
                     return;
@@ -13655,7 +13664,7 @@ return Utf8ArrayToStr(bff);
          * this function will
          * 1. async-run onEach in parallel,
          *    with the given options.rateLimit and options.retryLimit
-         * 2. call onError when done
+         * 2. call onError when isDone
          */
             var ii, onEach2, onParallel;
             onEach2 = function () {
@@ -13972,12 +13981,13 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             [
                 [local, 'child_process'],
                 [local, 'cluster'],
-                [local, 'fs'],
                 [local, 'http'],
                 [local, 'https'],
                 [local, 'net'],
                 [local, 'repl'],
+                [local.events, 'prototype'],
                 [local.global, 'process'],
+                [local.stream, 'prototype'],
                 [process, 'stdin']
             ].forEach(function (element) {
                 tmp = element[0][element[1]];
@@ -13993,7 +14003,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                         mockDict[key]();
                     }
                 });
-                mockList.push([ module, mockDict ]);
+                mockList.push([ tmp, mockDict ]);
             });
             local.testMock(mockList, function (onError) {
                 local.tryCatchOnError(function () {
@@ -14391,7 +14401,7 @@ instruction\n\
         local.streamReadAll = function (stream, onError) {
         /*
          * this function will concat data from the stream,
-         * and pass it to onError when done reading
+         * and pass it to onError when isDone reading
          */
             var chunkList;
             chunkList = [];
@@ -14440,11 +14450,11 @@ instruction\n\
                 return task;
             }
             task.onDone = function () {
-                // if already done, then do nothing
-                if (task.done) {
+                // if isDone, then do nothing
+                if (task.isDone) {
                     return;
                 }
-                task.done = true;
+                task.isDone = true;
                 // cleanup timerTimeout
                 clearTimeout(task.timerTimeout);
                 // cleanup task
@@ -14914,7 +14924,7 @@ instruction\n\
             testReport.testPlatformList.forEach(function (testPlatform) {
                 local.timeElapsedPoll(testPlatform);
                 testPlatform.testCaseList.forEach(function (testCase) {
-                    if (!testCase.done) {
+                    if (!testCase.isDone) {
                         local.timeElapsedPoll(testCase);
                     }
                     testPlatform.timeElapsed = Math.max(
@@ -15031,7 +15041,7 @@ instruction\n\
                     });
                 }
             });
-            // visual notification - update test-progress until done
+            // visual notification - update test-progress until isDone
             // init testReportDiv1 element
             if (local.modeJs === 'browser') {
                 testReportDiv1 = document.querySelector('#testReportDiv1');
@@ -15039,7 +15049,7 @@ instruction\n\
             testReportDiv1 = testReportDiv1 || { style: {} };
             testReportDiv1.style.display = 'block';
             testReportDiv1.innerHTML = local.testReportMerge(testReport, {});
-            // update test-report status every 1000 ms until done
+            // update test-report status every 1000 ms until isDone
             timerInterval = setInterval(function () {
                 // update testReportDiv1 in browser
                 testReportDiv1.innerHTML = local.testReportMerge(testReport, {});
@@ -15058,8 +15068,8 @@ instruction\n\
                 onError = function (error) {
                     // cleanup timerTimeout
                     clearTimeout(timerTimeout);
-                    // if testCase already done, then fail testCase with error for ending again
-                    if (testCase.done) {
+                    // if testCase isDone, then fail testCase with error for ending again
+                    if (testCase.isDone) {
                         error = error || new Error('callback in testCase ' +
                             testCase.name + ' called multiple times');
                     }
@@ -15076,11 +15086,11 @@ instruction\n\
                             'invalid errorStack ' + testCase.errorStack
                         );
                     }
-                    // if already done, then do nothing
-                    if (testCase.done) {
+                    // if tests isDone, then do nothing
+                    if (testCase.isDone) {
                         return;
                     }
-                    testCase.done = true;
+                    testCase.isDone = true;
                     if (testCase.status === 'pending') {
                         testCase.status = 'passed';
                     }
@@ -15088,10 +15098,10 @@ instruction\n\
                     local.timeElapsedPoll(testCase);
                     console.error('[' + local.modeJs + ' test-case ' +
                         testPlatform.testCaseList.filter(function (testCase) {
-                            return testCase.done;
+                            return testCase.isDone;
                         }).length + ' of ' + testPlatform.testCaseList.length + ' ' +
                         testCase.status + '] - ' + testCase.name);
-                    // if all tests are done, then create test-report
+                    // if all testCase isDone, then create test-report
                     onParallel();
                 };
                 testCase = testCase.element;
@@ -15107,7 +15117,7 @@ instruction\n\
                 }, onError);
             }, function () {
             /*
-             * this function will create the test-report after all tests are done
+             * this function will create the test-report after all tests isDone
              */
                 local.ajaxProgressUpdate();
                 // stop testPlatform timer
@@ -15506,6 +15516,7 @@ instruction\n\
         local.__require = require;
         local.child_process = require('child_process');
         local.cluster = require('cluster');
+        local.events = require('events');
         local.fs = require('fs');
         local.http = require('http');
         local.https = require('https');
@@ -15727,7 +15738,7 @@ instruction\n\
                 }, local.onErrorThrow);
             }());
             return;
-        case 'dbTableCustomOrgCrudGetManyByQuery':
+        case 'cli.dbTableCustomOrgCrudGetManyByQuery':
             local.dbTableCustomOrgCreate(JSON.parse(process.argv[3] || '{}'), function (error) {
                 // validate no error occurred
                 local.assert(!error, error);
@@ -15740,7 +15751,7 @@ instruction\n\
                     .join('\n'));
             });
             return;
-        case 'dbTableCustomOrgUpdate':
+        case 'cli.dbTableCustomOrgUpdate':
             local.dbTableCustomOrgUpdate(
                 JSON.parse(process.argv[3] || '{}'),
                 local.onErrorThrow
