@@ -1,0 +1,16 @@
+{
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "name": "npmdoc-mysql",
+    "homepage": "https://github.com/npmdoc/node-npmdoc-mysql",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-mysql.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shBuildCi"
+    },
+    "version": "0.0.1"
+}
